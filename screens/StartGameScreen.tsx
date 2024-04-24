@@ -1,7 +1,7 @@
 import { StyleSheet, TextInput, View, Alert } from 'react-native';
 import { useState } from 'react';
 
-import PrimaryButton from 'components/PrimaryButton';
+import PrimaryButton from 'components/ui/PrimaryButton';
 import Colors from 'constants/colors';
 
 type StartGameScreenProps = {

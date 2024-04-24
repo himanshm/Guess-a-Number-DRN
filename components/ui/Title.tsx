@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: Colors.accent500,
+    color: Colors.text100,
     textAlign: 'center',
     borderWidth: 2,
-    borderColor: Colors.accent500,
+    borderColor: Colors.secondary100,
     padding: 12,
   },
 });
