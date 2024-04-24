@@ -5,14 +5,24 @@ import Colors from 'constants/colors';
 
 type PrimaryButtonProps = {
   children: ReactNode;
-  onPress: () => void;
+  onPress?: () => void;
+  onPressWithArgs?: () => void;
 };
 
-function PrimaryButton({ children, onPress }: PrimaryButtonProps) {
+function PrimaryButton({
+  children,
+  onPress,
+  onPressWithArgs,
+}: PrimaryButtonProps) {
+  function pressHandler() {
+    if (onPressWithArgs) onPressWithArgs();
+    else if (onPress) onPress();
+  }
+
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
-        onPress={onPress}
+        onPress={pressHandler}
         android_ripple={{ color: Colors.primary600 }}
         style={({ pressed }) =>
           pressed
