@@ -29,7 +29,7 @@ let maxBoundary: number = 100;
 
 type GameScreenProps = {
   userNumber: number;
-  onGameOver: () => void;
+  onGameOver: (rounds: number) => void;
 };
 
 function GameScreen({ userNumber, onGameOver }: GameScreenProps) {
@@ -42,7 +42,7 @@ function GameScreen({ userNumber, onGameOver }: GameScreenProps) {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameOver]);
 
@@ -95,7 +95,7 @@ function GameScreen({ userNumber, onGameOver }: GameScreenProps) {
           </View>
         </View>
       </Card>
-      <View>
+      <View style={styles.listContainer}>
         {/* {guessRounds.map((guessRound) => (
           <Text key={guessRound}>{guessRound}</Text>
         ))} */}
@@ -119,7 +119,7 @@ export default GameScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 40,
+    padding: 60,
   },
   instructionText: {
     marginBottom: 12,
@@ -129,5 +129,9 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
+  },
+  listContainer: {
+    flex: 1,
+    padding: 16,
   },
 });

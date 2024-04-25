@@ -24,7 +24,7 @@ function GameOverScreen({
         />
       </View>
       <Text style={styles.summaryText}>
-        Your phone needed <Text style={styles.highlight}> {roundsNumber}</Text>{' '}
+        Your phone needed <Text style={styles.highlight}>{roundsNumber}</Text>{' '}
         rounds to guess the number{' '}
         <Text style={styles.highlight}>{userNumber}</Text>.
       </Text>
