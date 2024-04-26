@@ -1,6 +1,7 @@
-import Colors from 'constants/colors';
 import { ReactNode } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, Platform } from 'react-native';
+
+import Colors from 'constants/colors';
 
 type TitleProps = {
   children: ReactNode;
@@ -18,7 +19,9 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: Colors.text100,
     textAlign: 'center',
+    // borderWidth: Platform.OS === 'android' ? 2 : 0,
     borderWidth: 2,
+    borderRadius: 6,
     borderColor: Colors.secondary100,
     padding: 12,
     maxWidth: '80%',
